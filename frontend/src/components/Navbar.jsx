@@ -10,12 +10,10 @@ const Navbar = ({isLoggedIn, lead, setActiveComponent, setIsLoggedIn, setFilter}
   const [source, setSource] = useState("");
   const [sort, setSort] = useState("newest");
 
-
   const handleSearch =  () => {
     setFilter({ search: searchTerm, status, source, sort });
     setActiveComponent("search");
   }
-
   return (
     <>
     <nav className="flex items-center justify-between p-4 bg-gray-800 text-white cursor-pointer">

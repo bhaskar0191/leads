@@ -6,8 +6,6 @@ import AllLeads from '../components/AllLeads.jsx'
 import UpdateLeads from '../components/UpdateLeads.jsx'
 import Search from '../components/Search.jsx'
 
-
-
 const Homepage = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeComponent, setActiveComponent] = useState("home")
