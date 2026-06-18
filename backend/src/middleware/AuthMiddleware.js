@@ -5,7 +5,7 @@ config()
 
 const auth = (req, res, next) => {
 
-     const tokenHeader = req.headers.authorization;
+    const tokenHeader = req.headers.authorization;
     const tokenCookie = req.cookies?.token;
 
     const token = tokenHeader?.split(" ")[1] || tokenCookie;

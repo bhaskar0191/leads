@@ -40,7 +40,7 @@ const createLead = async (req, res) => {
         });
 
     } catch (error) {
-        res.status(400).json({ message: error.message });
+        res.status(500).json({ message: error.message });
     }
 }
 
@@ -53,7 +53,7 @@ const loginLead = async (req, res) => {
         }
         const lead = await Lead.findOne({ email });
         if (!lead) {
-            return res.status(400).json({ message: 'Invalid email ' });
+            return res.status(400).json({ message: 'Invalid email '});
         }
         const isMatch = await bcrypt.compare(password, lead.password);
         
@@ -97,7 +97,7 @@ const updateLead = async (req, res) => {
         const lead = await Lead.findById(id);
     
         if (!lead) {
-            return res.status(404).json({ message: 'Lead not found' });
+            return res.status(                                                  404).json({ message: 'Lead not found' });
         }
         if (req.body.password && req.body.password.trim() !== "") {
              req.body.password = await bcrypt.hash(req.body.password, 10);
@@ -186,9 +186,7 @@ const Logout = async (req, res) => {
              sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'strict',  
             })
             res.status(200).json({message: "Logout seccessfull complated"})
-    }catch(error){
-        console.error("logout error", error);
-        
+    }catch(error){  
         res.status(500).json({ message: error.message });
     }
     
