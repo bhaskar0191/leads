@@ -20,7 +20,7 @@ const Register = ({setIsLoggedIn, setActiveComponent}) => {
   const onSubmitHandler = async(e) =>{
     e.preventDefault();
       try{
-       const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}register`, formData)
+       const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}api/register`, formData)
         console.log("Lead register Successfully.", res.data)
         alert("Lead register Successfully.");
         setActiveComponent("allleads");

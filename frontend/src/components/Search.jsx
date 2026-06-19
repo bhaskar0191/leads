@@ -34,7 +34,7 @@ const Search = ({ setActiveComponent, setSelectedLeadId, filter }) => {
   const deleteLead = async (id) => {
       try {
            const token = localStorage.getItem("token");
-           const response = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/delete/${id}`, {
+           const response = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}api/delete/${id}`, {
            headers: { Authorization: `Bearer ${token}` },
        });
 
