@@ -24,11 +24,12 @@ app.get("/", (req, res) => {
     res.send("server is conncet")
 })
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server is running on port ${process.env.PORT}`);
-});
+// app.listen(process.env.PORT, () => {
+    //console.log(`Server is running on port ${process.env.PORT}`);
+//})
 
 // Connect to MongoDB
 connectDB()
 // Routes
 app.use('/leads', LeadRoute);
+export default app
