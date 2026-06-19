@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
 
-app.get((req, res) => {
+app.get("/", (req, res) => {
     console.log("server is conncet")
 })
 
