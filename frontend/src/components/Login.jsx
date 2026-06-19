@@ -17,7 +17,7 @@ const Login = ({ setIsLoggedIn, setActiveComponent ,setLead}) => {
    const onSubmitHandler = async(e) => {
       e.preventDefault();
       try{
-        const res = await axios.post("http://localhost:5000/leads/login", formData)
+        const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}login`, formData)
         localStorage.setItem("token", res.data.token);
         setIsLoggedIn(true);
         setLead(res.data.lead);

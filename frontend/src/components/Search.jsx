@@ -14,7 +14,7 @@ const Search = ({ setActiveComponent, setSelectedLeadId, filter }) => {
     
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/leads/query/filter", {
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}query/filter`, {
           params: { search, status, source, sort},
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true, // if your backend uses cookies/auth
@@ -34,7 +34,7 @@ const Search = ({ setActiveComponent, setSelectedLeadId, filter }) => {
   const deleteLead = async (id) => {
       try {
            const token = localStorage.getItem("token");
-           const response = await axios.delete(`http://localhost:5000/leads/delete/${id}`, {
+           const response = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/delete/${id}`, {
            headers: { Authorization: `Bearer ${token}` },
        });
 
