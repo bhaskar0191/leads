@@ -14,7 +14,7 @@ const AllLeads = ({setSelectedLeadId , setActiveComponent}) => {
         const getleads = async () => {
             try{
               const token = localStorage.getItem("token")
-              const response =  await axios.get(`${import.meta.env.VITE_BACKEND_URL}api/all`, {
+              const response =  await axios.get(`${import.meta.env.VITE_BACKEND_URL}/all`, {
                 headers: {Authorization: `Bearer ${token}`},
               })
               setLeads(response.data)
@@ -40,7 +40,7 @@ const AllLeads = ({setSelectedLeadId , setActiveComponent}) => {
     const deleteLead = async (id) => {
       try {
            const token = localStorage.getItem("token");
-           const response = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}api/delete/${id}`, {
+           const response = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/delete/${id}`, {
            headers: { Authorization: `Bearer ${token}` },
        });
 
