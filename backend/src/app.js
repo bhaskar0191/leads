@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-    console.log("server is conncet")
+    res.send("server is conncet")
 })
 
 app.listen(process.env.PORT, () => {
