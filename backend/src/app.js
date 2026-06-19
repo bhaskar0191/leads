@@ -32,4 +32,5 @@ app.get("/", (req, res) => {
 connectDB()
 // Routes
 app.use('/leads', LeadRoute);
+
 export default app
