@@ -28,8 +28,7 @@ const AllLeads = ({setSelectedLeadId , setActiveComponent}) => {
 
             }catch(err){
                 console.log("error fitching data", err)
-            };
-            
+            };     
         }
         const timeout = setTimeout(() => {
            getleads();

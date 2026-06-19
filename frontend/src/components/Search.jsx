@@ -37,7 +37,6 @@ const Search = ({ setActiveComponent, setSelectedLeadId, filter }) => {
            const response = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/delete/${id}`, {
            headers: { Authorization: `Bearer ${token}` },
        });
-
        if (response.data.success) {
           setLeads(leads.filter((lead) => lead._id !== id));
           alert(response.data.message);

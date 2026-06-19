@@ -4,7 +4,6 @@ import {useNavigate} from 'react-router-dom'
 
 const Login = ({ setIsLoggedIn, setActiveComponent ,setLead}) => {
 
-
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
     email: "",

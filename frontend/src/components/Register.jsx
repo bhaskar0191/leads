@@ -12,11 +12,9 @@ const Register = ({setIsLoggedIn, setActiveComponent}) => {
     status:'',
     soruce:''
   })
-
   const changeHeandler = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
-
   const onSubmitHandler = async(e) =>{
     e.preventDefault();
       try{

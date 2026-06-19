@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { FaArrowLeft } from "react-icons/fa6";
 
 const UpdateLeads = ({ id, setActiveComponent }) => {
+  
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
     name:  '',
@@ -12,7 +13,6 @@ const UpdateLeads = ({ id, setActiveComponent }) => {
     status: '',
     source: ''
   })
-
   const changeHeandler = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
