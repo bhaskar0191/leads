@@ -22,7 +22,7 @@ const UpdateLeads = ({ id, setActiveComponent }) => {
     try {
         const token = localStorage.getItem("token")
         console.log("Token being sent:", token)
-        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/${id}`,{
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/leads/${id}`,{
             headers: {Authorization: `Bearer ${token}`}
         })
         console.log(res.data)
