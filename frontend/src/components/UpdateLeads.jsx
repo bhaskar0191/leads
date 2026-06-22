@@ -22,7 +22,7 @@ const UpdateLeads = ({ id, setActiveComponent }) => {
     try {
         const token = localStorage.getItem("token")
         console.log("Token being sent:", token)
-        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/leads/${id}`,{
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/${id}`,{
             headers: {Authorization: `Bearer ${token}`}
         })
         console.log(res.data)
@@ -44,7 +44,7 @@ const UpdateLeads = ({ id, setActiveComponent }) => {
     e.preventDefault();
       try{
         const token = localStorage.getItem("token")
-       const res = await axios.put(`http://localhost:5000/leads/update/${id}`, formData, {
+       const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/update/${id}`, formData, {
         headers: {Authorization: `Bearer ${token}`}
        })
       console.log("Lead updated Successfully.", res.data)

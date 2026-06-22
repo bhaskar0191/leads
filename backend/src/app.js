@@ -36,6 +36,6 @@ app.get("/", (req, res) => {
 // Connect to MongoDB
 connectDB()
 // Routes
-app.use('/leads', LeadRoute);
+app.use('/', LeadRoute);
 
 export default app

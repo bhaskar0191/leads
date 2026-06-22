@@ -9,7 +9,7 @@ const Logout = ({setIsLoggedIn, setActiveComponent}) => {
 
   const handleLogout = async () => {
     try {
-        const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/leads/logout`, {}, {
+        const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/logout`, {}, {
             withCredentials: true,  
         });
         if(res.status === 200){
