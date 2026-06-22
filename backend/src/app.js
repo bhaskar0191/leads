@@ -10,8 +10,13 @@ import {connectDB} from './config/DB.js'
 dotenv.config()
 const app = express();
 app.use(cookieParser());
+
+ const allowedOrigins = [
+  "https://leads-frontend-mu.vercel.app", // your deployed frontend
+  "http://localhost:5173",                // for local dev
+];
 app.use(cors({
-    origin: "https://leads-frontend-mu.vercel.app/", 
+    origin: allowedOrigins, 
     credentials:true
 }));
 
